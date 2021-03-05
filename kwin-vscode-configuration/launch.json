@@ -1,0 +1,61 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/home/tanf/kwin/src/build/bin/kwin_x11",
+            "args": [
+                "--replace",
+                "-platform", 
+                "dde-kwin-xcb" 
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {   
+                    "name": "DISPLAY",  
+                    "value": ":0.0" 
+                }
+                ,{  
+                    "name": "QT_PLUGIN_PATH",  //x11 platform
+                    "value": "/usr/lib/x86_64-linux-gnu/qt5/plugins/"
+                 }
+                ,{
+                    "name": "QT_QPA_PLATFORM_PLUGIN_PATH",  
+                    "value": "/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms"
+                }
+                ,{                     
+                     "name": "LD_LIBRARY_PATH",                     
+                     "value": "/home/tanf/kwin/src/build/bin"                 
+                }
+                ,{                    
+                    "name": "D_KWIN_DEBUG_APP_START_TIME",                    
+                    "value":"100000"   
+                }
+                ,{
+                    "name": "QT_LOGGING_RULES",
+                    "value": "kwin_core=true"
+                }
+                ,{
+                    "name": "QML2_IMPORT_PATH",
+                    "value": "/home/tanf/kwin/src/build/lib/x86_64-linux-gnu/qml"                
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
