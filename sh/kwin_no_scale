@@ -5,6 +5,7 @@ fi
 
 EXECUTE_PATH=$(cd `dirname $0`; pwd)
 
+export QT_LOGGING_RULES="*=true"
 export "LD_PRELOAD=/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/libdde-kwin-xcb.so:$LD_PRELOAD"
 export QT_SCALE_FACTOR=1
 #":"后的"appFilePath=..."会传递给QPlatformIntegration::create调用

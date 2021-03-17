@@ -68,6 +68,11 @@ wininfo是查询窗口属性以及窗口的层次都可以。
 
  窗口id使用xwininfo.
 
+gsettings set com.deepin.dde.dock.mainwindow only-show-primary true  设置dock仅在主屏显示
+
+xrandr --output HDMI-0 --scale 1x1
+xrandr --output HDMI-0 --scale 1.2x1.2   
+
 #### wayland
 
 export WAYLAND_DEBUG=server #调试wayland
@@ -144,6 +149,8 @@ source /etc/profile #执行这行代码后才会生效
 
 ## coredump
 
+sudo apt install systemd-coredump
+
 sudo coredumpctl gdb  #崩溃调试
 
 coredumpctl | tail
@@ -212,3 +219,4 @@ meld  --->比较文件
 
 vscode 插件 ：Eclipse Keymap (alt + 左移，右移  用于看前一个记录）
 
+lspci -v | grep VGA  -A12  查看显卡驱动
